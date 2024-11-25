@@ -22,4 +22,13 @@ public class EntityTest {
         Assert.assertEquals(150, testHuman.getHealthPoints());
     }
 
+    @Test
+    public void testTakeDamage() {
+        testAlien.takeDamage(20);
+        testHuman.takeDamage(20);
+
+        Assert.assertEquals(80, testAlien.getHealthPoints());
+        Assert.assertEquals(130, testHuman.getHealthPoints());
+    }
+
 }
