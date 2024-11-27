@@ -23,6 +23,9 @@ public abstract class Entity {
 
     public void takeDamage(int attackPower) {
         healthPoints -= attackPower;
+        if (healthPoints < 0) {
+            healthPoints = 0;
+        }
     }
 
 }

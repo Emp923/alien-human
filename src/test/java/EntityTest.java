@@ -31,4 +31,13 @@ public class EntityTest {
         Assert.assertEquals(130, testHuman.getHealthPoints());
     }
 
+    @Test
+    public void testHealthPointsNeverGoBelowZero() {
+        testAlien.takeDamage(101);
+        testHuman.takeDamage(151);
+
+        Assert.assertEquals(0, testAlien.getHealthPoints());
+        Assert.assertEquals(0, testHuman.getHealthPoints());
+    }
+
 }
