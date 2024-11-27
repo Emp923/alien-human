@@ -4,8 +4,11 @@ public class Human extends Entity {
         super(name, healthPoints);
     }
 
-    public void attackAlien(Alien alien) {
-        alien.takeDamage(attackPower);
+    @Override
+    public void attackEntity(Entity otherEntity) {
+        if (!(otherEntity instanceof Human)) {
+            otherEntity.takeDamage(attackPower);
+        }
     }
 
 }

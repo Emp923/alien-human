@@ -28,4 +28,6 @@ public abstract class Entity {
         }
     }
 
+    public abstract void attackEntity(Entity otherEntity);
+
 }

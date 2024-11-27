@@ -16,7 +16,15 @@ public class AlienTest {
     @Test
     public void testAttackHuman() {
         testAlien.setAttackPower(20);
-        testAlien.attackHuman(testHuman);
+        testAlien.attackEntity(testHuman);
         Assert.assertEquals(130, testHuman.getHealthPoints());
+    }
+
+    @Test
+    public void testCannotAttackOtherAlien() {
+        Alien otherAlien = new Alien("otherAlien", 100);
+        testAlien.setAttackPower(20);
+        testAlien.attackEntity(otherAlien);
+        Assert.assertEquals(100, otherAlien.getHealthPoints());
     }
 }
