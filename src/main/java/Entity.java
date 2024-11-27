@@ -2,6 +2,7 @@ public abstract class Entity {
 
     private final String name;
     private int healthPoints;
+    protected int attackPower;
 
     public Entity(String name, int healthPoints) {
         this.name = name;
@@ -14,6 +15,10 @@ public abstract class Entity {
 
     public int getHealthPoints() {
         return healthPoints;
+    }
+
+    public void setAttackPower(int attackPower) {
+        this.attackPower = attackPower;
     }
 
     public void takeDamage(int attackPower) {

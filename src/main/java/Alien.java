@@ -4,4 +4,8 @@ public class Alien extends Entity {
         super(name, healthPoints);
     }
 
+    public void attackHuman(Human human) {
+        human.takeDamage(attackPower);
+    }
+
 }
