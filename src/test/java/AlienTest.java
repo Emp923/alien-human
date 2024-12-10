@@ -27,4 +27,11 @@ public class AlienTest {
         testAlien.attackEntity(otherAlien);
         Assert.assertEquals(100, otherAlien.getHealthPoints());
     }
+
+    @Test
+    public void testCannotAttackSelf() {
+        testAlien.setAttackPower(10);
+        testAlien.attackEntity(testAlien);
+        Assert.assertEquals(200, testAlien.getHealthPoints());
+    }
 }

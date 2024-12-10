@@ -28,4 +28,11 @@ public class HumanTest {
         Assert.assertEquals(100, otherHuman.getHealthPoints());
     }
 
+    @Test
+    public void testCannotAttackSelf() {
+        testHuman.setAttackPower(10);
+        testHuman.attackEntity(testHuman);
+        Assert.assertEquals(200, testHuman.getHealthPoints());
+    }
+
 }

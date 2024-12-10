@@ -17,4 +17,10 @@ public class Environment {
         entities.add(entity);
     }
 
+    public void attacksAllEntities(Entity attacker) {
+        for (Entity entity : entities) {
+            attacker.attackEntity(entity);
+        }
+    }
+
 }

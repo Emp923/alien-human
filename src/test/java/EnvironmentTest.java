@@ -28,4 +28,27 @@ public class EnvironmentTest {
         Assert.assertEquals(1, testEnvironment.getEntityCount());
     }
 
+    @Test
+    public void testAttackAllEntitiesInEnvironment() {
+        Human testAttacker = new Human("", 100);
+        testAttacker.setAttackPower(10);
+
+        Human targetHuman1 = new Human("", 100);
+        Human targetHuman2 = new Human("", 100);
+        Alien targetAlien1 = new Alien("", 100);
+        Alien targetAlien2 = new Alien("", 100);
+
+        testEnvironment.addEntity(targetHuman1);
+        testEnvironment.addEntity(targetHuman2);
+        testEnvironment.addEntity(targetAlien1);
+        testEnvironment.addEntity(targetAlien2);
+
+        testEnvironment.attacksAllEntities(testAttacker);
+
+        Assert.assertEquals(100, targetHuman1.getHealthPoints());
+        Assert.assertEquals(100, targetHuman2.getHealthPoints());
+        Assert.assertEquals(90, targetAlien1.getHealthPoints());
+        Assert.assertEquals(90, targetAlien2.getHealthPoints());
+    }
+
 }
